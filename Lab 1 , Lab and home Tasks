@@ -1,0 +1,434 @@
+\\LAB TASK 1:
+class CounterClass {
+
+    // static variable to count objects
+    static int count = 0;
+
+    // constructor
+    CounterClass() {
+        count++;
+        System.out.println("I am object no. " + count);
+    }
+
+    // main method
+    public static void main(String[] args) {
+
+        CounterClass obj1 = new CounterClass();
+        CounterClass obj2 = new CounterClass();
+        CounterClass obj3 = new CounterClass();
+
+    }
+}
+
+
+\\LAB TASK 2:
+class CounterClass {
+
+    // static variable to count objects
+    static int count = 0;
+
+    // constructor
+    CounterClass() {
+        count++;
+        System.out.println("I am object no. " + count);
+    }
+
+    // method to display total objects
+    static void showTotalObjects() {
+        System.out.println("Total number of objects created: " + count);
+    }
+
+    // main method
+    public static void main(String[] args) {
+
+        CounterClass obj1 = new CounterClass();
+        CounterClass obj2 = new CounterClass();
+        CounterClass obj3 = new CounterClass();
+
+        // display total objects
+        CounterClass.showTotalObjects();
+    }
+}
+
+
+\\LAB TASK 3:
+public class Int {
+
+    // integer data member
+    private int value;
+
+    // initialize to zero
+    void initZero() {
+        value = 0;
+    }
+
+    // initialize to a given integer value
+    void initValue(int v) {
+        value = v;
+    }
+
+    // display the value
+    void display() {
+        System.out.println("Value is: " + value);
+    }
+
+    // main method
+    public static void main(String[] args) {
+
+        // create Int object
+        Int num = new Int();
+
+        // initialize to zero and display
+        num.initZero();
+        num.display();
+
+        // initialize to an integer value and display
+        num.initValue(50);
+        num.display();
+    }
+}
+
+
+\\TASK 4:
+import java.util.Scanner;
+
+public class Time {
+
+    int hours;
+    int minutes;
+    int seconds;
+
+    // function to read time
+    void readTime() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter hours (0–23): ");
+        hours = sc.nextInt();
+
+        System.out.print("Enter minutes (0–59): ");
+        minutes = sc.nextInt();
+
+        System.out.print("Enter seconds (0–59): ");
+        seconds = sc.nextInt();
+    }
+
+    // display in 24-hour format
+    void display24Hour() {
+        System.out.printf("24-Hour Format: %02d:%02d:%02d\n",
+                hours, minutes, seconds);
+    }
+
+    // display in 12-hour format
+    void display12Hour() {
+        int h = hours;
+        String period = "AM";
+
+        if (h == 0) {
+            h = 12;
+        } else if (h == 12) {
+            period = "PM";
+        } else if (h > 12) {
+            h = h - 12;
+            period = "PM";
+        }
+
+        System.out.printf("12-Hour Format: %02d:%02d:%02d %s\n",
+                h, minutes, seconds, period);
+    }
+
+    // main method
+    public static void main(String[] args) {
+
+        Time t = new Time();
+
+        t.readTime();
+        t.display24Hour();
+        t.display12Hour();
+    }
+}
+
+
+\\TASK 5:
+import java.util.Scanner;
+
+public class Marks {
+
+    // data members
+    int m1, m2, m3;
+
+    // function to input marks
+    void set_marks() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter marks 1: ");
+        m1 = sc.nextInt();
+
+        System.out.print("Enter marks 2: ");
+        m2 = sc.nextInt();
+
+        System.out.print("Enter marks 3: ");
+        m3 = sc.nextInt();
+    }
+
+    // function to calculate and return sum
+    int sum() {
+        return m1 + m2 + m3;
+    }
+
+    // function to calculate and return average
+    float avg() {
+        return sum() / 3.0f;
+    }
+
+    // main method
+    public static void main(String[] args) {
+
+        Marks obj = new Marks();
+
+        obj.set_marks();
+
+        System.out.println("Sum of marks = " + obj.sum());
+        System.out.println("Average marks = " + obj.avg());
+    }
+}
+
+
+\\HOME TASK 1:
+public class Rectangle {
+
+    // data members
+    double width;
+    double height;
+
+    // no-arg constructor (default values)
+    Rectangle() {
+        width = 1;
+        height = 1;
+    }
+
+    // constructor with parameters
+    Rectangle(double w, double h) {
+        width = w;
+        height = h;
+    }
+
+    // method to return area
+    double getArea() {
+        return width * height;
+    }
+
+    // method to return perimeter
+    double getPerimeter() {
+        return 2 * (width + height);
+    }
+
+    // main method (test program)
+    public static void main(String[] args) {
+
+        // create rectangle objects
+        Rectangle r1 = new Rectangle(4, 40);
+        Rectangle r2 = new Rectangle(3.5, 35.9);
+
+        // display rectangle 1 details
+        System.out.println("Rectangle 1:");
+        System.out.println("Width = " + r1.width);
+        System.out.println("Height = " + r1.height);
+        System.out.println("Area = " + r1.getArea());
+        System.out.println("Perimeter = " + r1.getPerimeter());
+
+        System.out.println();
+
+        // display rectangle 2 details
+        System.out.println("Rectangle 2:");
+        System.out.println("Width = " + r2.width);
+        System.out.println("Height = " + r2.height);
+        System.out.println("Area = " + r2.getArea());
+        System.out.println("Perimeter = " + r2.getPerimeter());
+    }
+}
+
+
+\\HOME TASK 2:
+public class Stock {
+
+    // data members
+    String symbol;
+    String name;
+    double previousClosingPrice;
+    double currentPrice;
+
+    // constructor
+    Stock(String symbol, String name) {
+        this.symbol = symbol;
+        this.name = name;
+    }
+
+    // method to calculate price change percentage
+    double getChangePercent() {
+        return ((currentPrice - previousClosingPrice) 
+                / previousClosingPrice) * 100;
+    }
+
+    // main method (test program)
+    public static void main(String[] args) {
+
+        // create Stock object
+        Stock stock = new Stock("ORCL", "Oracle Corporation");
+
+        // set prices
+        stock.previousClosingPrice = 34.5;
+        stock.currentPrice = 34.35;
+
+        // display price change percentage
+        System.out.println("Stock Symbol: " + stock.symbol);
+        System.out.println("Stock Name: " + stock.name);
+        System.out.println("Price Change Percentage: "
+                + stock.getChangePercent() + "%");
+    }
+}
+
+
+\\HOME TASK 3:
+import java.util.Date;
+
+public class DateTest {
+
+    public static void main(String[] args) {
+
+        // array of elapsed times in milliseconds
+        long[] times = {
+            10000L, 
+            100000L, 
+            1000000L, 
+            10000000L, 
+            100000000L, 
+            1000000000L, 
+            10000000000L, 
+            100000000000L
+        };
+
+        // loop through each elapsed time
+        for (long t : times) {
+            Date date = new Date();      // create Date object
+            date.setTime(t);             // set elapsed time
+            System.out.println("Elapsed Time: " + t + " ms");
+            System.out.println("Date and Time: " + date.toString());
+            System.out.println();
+        }
+    }
+}
+
+
+\\HOME TASK 4:
+import java.util.Random;
+
+public class RandomTest {
+
+    public static void main(String[] args) {
+
+        // create Random object with seed 1000
+        Random rand = new Random(1000);
+
+        System.out.println("First 50 random integers between 0 and 100:");
+
+        // generate and display 50 random integers
+        for (int i = 1; i <= 50; i++) {
+            int num = rand.nextInt(101); // nextInt(101) gives 0–100
+            System.out.print(num + " ");
+            if (i % 10 == 0) {  // print 10 numbers per line for clarity
+                System.out.println();
+            }
+        }
+    }
+}
+
+
+\\HOME TASK 5:
+public class Account {
+
+    // private data fields
+    private int id = 0;                     // default 0
+    private double balance = 0;             // default 0
+    private static double annualInterestRate = 0; // shared by all accounts
+
+    // no-arg constructor
+    public Account() {
+        // defaults are already set
+    }
+
+    // constructor with id and balance
+    public Account(int id, double balance) {
+        this.id = id;
+        this.balance = balance;
+    }
+
+    // getter for id
+    public int getId() {
+        return id;
+    }
+
+    // setter for id
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    // getter for balance
+    public double getBalance() {
+        return balance;
+    }
+
+    // setter for balance
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    // getter for annualInterestRate
+    public static double getAnnualInterestRate() {
+        return annualInterestRate;
+    }
+
+    // setter for annualInterestRate
+    public static void setAnnualInterestRate(double rate) {
+        annualInterestRate = rate;
+    }
+
+    // method to get monthly interest rate
+    public double getMonthlyInterestRate() {
+        return annualInterestRate / 12;
+    }
+
+    // method to withdraw amount
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+        } else {
+            System.out.println("Insufficient balance!");
+        }
+    }
+
+    // method to deposit amount
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    // main method (test program)
+    public static void main(String[] args) {
+
+        // create account object
+        Account acc = new Account(1234, 5000);
+
+        // set annual interest rate
+        Account.setAnnualInterestRate(4.5);
+
+        // display account details
+        System.out.println("Account ID: " + acc.getId());
+        System.out.println("Balance: " + acc.getBalance());
+        System.out.println("Monthly Interest Rate: " + acc.getMonthlyInterestRate());
+
+        // deposit and withdraw
+        acc.deposit(1000);
+        acc.withdraw(2000);
+
+        System.out.println("Balance after transactions: " + acc.getBalance());
+    }
+}
