@@ -1,0 +1,186 @@
+\\Task 1:
+public class Main {
+    public static void main(String[] args) {
+
+        // Create Address object
+        Address address = new Address("Street 10", "House #25", "Quetta", "54000");
+
+        // Create Person object with address
+        Person person = new Person("Talha", address);
+
+        // Print Person Information
+        System.out.println(person);
+    }
+}
+
+\\Task 2:
+public class Main {
+    public static void main(String[] args) {
+
+        // Creating Date objects
+        Date dob = new Date(10, 5, 1975);
+        Date doj = new Date(12, 3, 2010);
+
+        // Creating Employee object
+        Employee emp = new Employee("Talha", dob, doj);
+
+        // Display results
+        emp.displayInfo();
+    }
+}
+
+\\Task 3:
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Enter Book Details:");
+        Book b = new Book();
+        b.getdata();
+
+        System.out.println("\nEnter Tape Details:");
+        Tape t = new Tape();
+        t.getdata();
+
+        System.out.println("\n===== Book Information =====");
+        b.putdata();
+
+        System.out.println("\n===== Tape Information =====");
+        t.putdata();
+    }
+}
+
+\\Task 4:
+public class Main {
+    public static void main(String[] args) {
+
+        Student s = new Student();
+
+        System.out.println("Enter Student Details:");
+        s.input();
+
+        System.out.println("\n===== Student Information =====");
+        s.display();
+    }
+}
+
+\\Task 5:
+public class Main {
+    public static void main(String[] args) {
+
+        // Using parameterized constructor
+        Laptop l = new Laptop(64, 16000, 512000, 3200,
+                13.3, 9.0, 0.6, 1.3);
+
+        System.out.println("===== Laptop Specifications =====");
+        l.display();
+    }
+}
+
+
+\\Home Task 1:
+public class Main {
+    public static void main(String[] args) {
+
+        Test student = new Test();
+
+        System.out.println("=== Enter Student Information ===");
+        student.getdata();
+
+        System.out.println("\n=== Enter Student Marks ===");
+        student.getmarks();
+
+        student.Finalresult(); // calculate final marks
+
+        System.out.println("\n===== Student Record =====");
+        student.putdata();
+        student.putmarks();
+    }
+}
+
+\\Home Task 2:
+public class Complex extends Simple {
+
+    public Complex(double num1, double num2) {
+        super(num1, num2);
+    }
+
+    private boolean checkValues() {
+        return num1 > 0 && num2 > 0;
+    }
+
+    @Override
+    public void add() {
+        if (checkValues())
+            super.add();
+        else
+            System.out.println("Error: Numbers must be greater than 0.");
+    }
+
+    @Override
+    public void sub() {
+        if (checkValues())
+            super.sub();
+        else
+            System.out.println("Error: Numbers must be greater than 0.");
+    }
+
+    @Override
+    public void mul() {
+        if (checkValues())
+            super.mul();
+        else
+            System.out.println("Error: Numbers must be greater than 0.");
+    }
+
+    @Override
+    public void div() {
+        if (checkValues())
+            super.div();
+        else
+            System.out.println("Error: Numbers must be greater than 0.");
+    }
+}
+
+
+\\Home Task 3:
+public class Main {
+    public static void main(String[] args) {
+
+        Electricity e1 = new Electricity(80);
+        More_Electricity e2 = new More_Electricity(300);
+
+        System.out.println("Cost for 80 units: Rs. " + e1.Bill());
+        System.out.println("Cost for 300 units (with surcharge): Rs. " + e2.Bill());
+    }
+}
+
+\\Home Task 4:
+public class Main {
+    public static void main(String[] args) {
+
+        // ========== Simple Package ==========
+        Package p = new Package(
+                "Salar", "Street 1", "Quetta", "Balochistan", "54000",
+                "Hameer", "Street 5", "Karachi", "Sindh", "75000",
+                10, 2.0
+        );
+
+        // ========== Two Day Package ==========
+        TwoDayPackage tdp = new TwoDayPackage(
+                "Salar", "Street 1", "Quetta", "Balochistan", "54000",
+                "Hameer", "Street 5", "Karachi", "Sindh", "75000",
+                10, 2.0, 50
+        );
+
+        // ========== Overnight Package ==========
+        OvernightPackage onp = new OvernightPackage(
+                "Salar", "Street 1", "Quetta", "Balochistan", "54000",
+                "Hameer", "Street 5", "Karachi", "Sindh", "75000",
+                10, 2.0, 1.5
+        );
+
+        System.out.println("Cost of Standard Package: Rs. " + p.calculateCost());
+        System.out.println("Cost of Two-Day Package: Rs. " + tdp.calculateCost());
+        System.out.println("Cost of Overnight Package: Rs. " + onp.calculateCost());
+    }
+}
