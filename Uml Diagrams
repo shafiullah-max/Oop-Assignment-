@@ -1,0 +1,57 @@
+1:
+/*
+---------------------------------
+|           Rectangle            |
+---------------------------------
+| - width: double                |
+| - height: double               |
+---------------------------------
+| + Rectangle()                  |
+| + Rectangle(width: double, height: double) |
+| + getArea(): double            |
+| + getPerimeter(): double       |
+| + getWidth(): double           |
+| + getHeight(): double          |
+---------------------------------
+*/
+
+2:
+*
+-------------------------------
+           Stock
+-------------------------------
+symbol : String
+name : String
+previousClosingPrice : double
+currentPrice : double
+-------------------------------
++ Stock(symbol : String, name : String)
++ getChangePercent() : double
+-------------------------------
+/
+
+5:
+/
+-------------------------------------------------
+                   Account
+-------------------------------------------------
+id : int
+balance : double
+annualInterestRate : double
+dateCreated : Date
+-------------------------------------------------
++ Account()
++ Account(id : int, balance : double)
++ getId() : int
++ setId(id : int) : void
++ getBalance() : double
++ setBalance(balance : double) : void
++ getAnnualInterestRate() : double
++ setAnnualInterestRate(rate : double) : void
++ getDateCreated() : Date
++ getMonthlyInterestRate() : double
++ getMonthlyInterest() : double
++ withdraw(amount : double) : void
++ deposit(amount : double) : void
+-------------------------------------------------
+*/
